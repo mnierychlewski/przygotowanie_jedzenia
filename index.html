@@ -10,7 +10,10 @@
       overflow: hidden;
       height: 100%;
       background: linear-gradient(#e6f3ff, #ffffff);
+      font-family: 'Segoe UI', sans-serif;
     }
+
+    /* Arkusz */
     iframe {
       position: absolute;
       top: 0;
@@ -20,6 +23,30 @@
       border: none;
       z-index: 1;
     }
+
+    /* Przycisk – teraz po LEWEJ stronie */
+    .edit-button {
+      position: fixed;
+      top: 12px;
+      left: 12px;
+      z-index: 1000;
+      background: rgba(255, 255, 255, 0.85);
+      padding: 10px 16px;
+      border-radius: 16px;
+      color: #333;
+      text-decoration: none;
+      font-weight: 600;
+      box-shadow: 0 2px 6px rgba(0,0,0,0.15);
+      backdrop-filter: blur(4px);
+      transition: all 0.2s ease;
+    }
+    .edit-button:hover {
+      background: white;
+      box-shadow: 0 3px 8px rgba(0,0,0,0.25);
+      transform: scale(1.05);
+    }
+
+    /* Płatki i ikony */
     .snowflake {
       position: fixed;
       top: -10px;
@@ -29,6 +56,7 @@
       z-index: 999;
       text-shadow: 0 0 3px rgba(0,0,0,0.2);
     }
+
     @keyframes fall {
       0% { transform: translateY(0); opacity: 1; }
       100% { transform: translateY(100vh); opacity: 0; }
@@ -37,10 +65,17 @@
 </head>
 <body>
 
-  <!-- Twój arkusz Google -->
+  <!-- 🔗 Przycisk do otwarcia arkusza -->
+  <a class="edit-button"
+     href="https://docs.google.com/spreadsheets/d/1XYqWLGCanJ2HPRBuHobuY3i-xDFCE-hIdRD8HrBAihc/edit?usp=sharing"
+     target="_blank">
+     ✏️ Otwórz w aplikacji Google Sheets
+  </a>
+
+  <!-- 📄 Arkusz Google -->
   <iframe src="https://docs.google.com/spreadsheets/d/1XYqWLGCanJ2HPRBuHobuY3i-xDFCE-hIdRD8HrBAihc/edit?usp=sharing"></iframe>
 
-  <!-- Skrypt śniegu + mikołajów 🎅 -->
+  <!-- 🎅 Skrypt śniegu i ikon -->
   <script>
     const icons = ['❄️', '🎅', '🎁', '🎄', '🌟', '⛄'];
     const snowCount = 60; // liczba spadających elementów
